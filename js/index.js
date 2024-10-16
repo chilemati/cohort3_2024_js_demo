@@ -269,19 +269,119 @@ console.log(remote);
   calling the function
   functionName();
 */
-function greetUser () {
-  console.log('Good Morning Mr. Chile!')
+function greetUser (name='Chile',title="Mr") {
+  console.log(`Good Morning ${title}. ${name}!`)
 }
 //? using arrow function
 const greetUser2 = ()=> {
   console.log('Good After Mr. Chile!');
 }
 
-greetUser()
+greetUser('Wofai','Ms')
 greetUser2()
 //? hoisting
 // how to make a function dynamic
-// how to return values from a function
+// how to return values from a function  
+
+// create a function that sums any two numbers
+
+function sumTwo (a=1,b=2) {
+  console.log(a+b);
+}
+
+sumTwo(13,12)
+
+// create a function that substracts any three numbers
+
+function subThree(a=3,b=2,c=1) {
+  return a-b-c;
+}
+
+console.log(subThree(12,7)*5)
+
+// create a function that adds,multiples,subracts and divides any two numbers
+
+function amsd(a=5,b=4,c=3,d=2) {
+  let add = a+b+c+d;
+  let subract = a-b-c-d;
+  let multiply = a*b*c*d;
+  let divide = a/b/c/d;
+  // return [add,subract,multiply,divide]
+  return {add,subract,multiply,divide}
+}
+
+// destructure
+// let [divide,subract] = amsd();
+let {divide,subract} = amsd(150);
+console.log(amsd())
+console.log(divide,subract)
+
+//! CONDITIONALS
+// let input = prompt('Please type a number from 0 -10: ');
+// //  if
+// if(Number(input) > 5) {
+//   console.log('is greater than 5')
+// }else{
+  
+//   console.log('is less than 5')
+// }
+
+let input = prompt('Please enter your Age: ');
+
+// if(Number(input) > 17) {
+//   console.log('can drink alcohol');
+// }else if(Number(input) > 15 && Number(input) <=17) {
+//   console.log('can drink alcohol under parents supervision')
+// }else if(Number(input) > 10 && Number(input) <=15) {
+//    console.log('I recomend Hollandia Yogurt ')
+// }else{
+//   console.log('I recomend Water')
+// }
+
+// switch (Number(input)) {
+//   case 19:
+//   case 18:
+//     console.log('can drink alcohol');
+//     break;
+//   case 16:
+//   case 17:
+//     console.log('can drink alcohol under parents supervision')
+//     break;
+//   case 10:
+//   case 11:
+//   case 12:
+//   case 13:
+//   case 14:
+//   case 15:
+//     console.log('I recomend Hollandia Yogurt ')
+//     break;
+
+//   default:
+//     console.log('I recomend Water')
+//     break;
+// }
 
 
+// if(Number(input)>= 18) {
+//   console.log('Can drink alcohol')
+//   console.log('What is your brand?')
+// }else{
+//   console.log('Can not drink alcohol')
 
+// }
+/* 
+  if(condition) {
+  code block;
+  }
+*/
+//? tenary operator
+// condition ? statement to run if true : statement to run if false;
+Number(input)>= 18 ? console.log('Can drink alcohol'): console.log('Can not drink alcohol');
+
+//? conditional rendering
+
+// condition && statement to run if true;
+
+Number(input)>= 50 && console.log('Please stop drinking alcohol or drink in moduration'); 
+
+!(Number(input)>= 50) && console.log(' drink alcohol responsibly'); 
